@@ -4,95 +4,118 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- 元数据（给浏览器/搜索引擎用，不显示在页面正文） -->
+  <!-- 元数据 -->
   <meta name="title" content="Air-Surface Transition of a Novel Leg-Assisted Multirotor UAV: Design and Control">
   <meta name="description" content="experiment videos for paper">
   <title>Air-Surface Transition of a Novel Leg-Assisted Multirotor UAV: Design and Control</title>
   
-  <!-- 保留必要样式 -->
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- 引入2种不同字体（标题用Inter粗体，介绍用Open Sans常规体） -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
   
-  <!-- 保留必要脚本 -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/index.js"></script>
+  <!-- 基础样式 + 自定义优化 -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <style>
+    /* 标题字体：醒目粗体，响应式大小 */
+    .publication-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      margin: 2rem 0;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+    }
+
+    /* 视频介绍字体：轻量易读，与标题区分 */
+    .video-desc {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: #4a4a4a;
+      max-width: 800px;
+      margin: 1rem auto;
+    }
+
+    /* 视频尺寸控制：固定最大宽度，避免过大 */
+    .teaser video {
+      max-width: 800px;
+      max-height: 500px;
+      width: 90%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* 视频模块间距：避免视频之间太拥挤 */
+    .teaser {
+      margin: 3rem auto;
+    }
+  </style>
 </head>
 <body>
-  <!-- 1. 新增：论文标题展示区域（这是页面正文能看到的标题） -->
+  <!-- 论文标题 -->
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- 论文标题（正文可见） -->
-            <h1 class="title is-1 publication-title">Air-Surface Transition of a Novel Leg-Assisted Multirotor UAV: Design and Control</h1>
+            <h1 class="publication-title">Air-Surface Transition of a Novel Leg-Assisted Multirotor UAV: Design and Control</h1>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. 原有视频模块（保持不变） -->
+  <!-- 视频1（路径已改为 videos/land.mp4） -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+      <div class="hero-body has-text-centered">
+        <video poster="" autoplay controls muted loop preload="metadata">
           <source src="videos/land.mp4" type="video/mp4">
         </video>
-        <h2 class="subtitle has-text-centered">
-          UAV Landing Process (地面着陆过程演示)
-        </h2>
+        <h2 class="video-desc">land</h2>
       </div>
     </div>
   </section>
 
+  <!-- 视频2（路径已改为 videos/hop.mp4） -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+      <div class="hero-body has-text-centered">
+        <video poster="" autoplay controls muted loop preload="metadata">
           <source src="videos/hop.mp4" type="video/mp4">
         </video>
-        <h2 class="subtitle has-text-centered">
-          UAV Hopping Movement (无人机跳跃运动演示)
-        </h2>
+        <h2 class="video-desc">hop</h2>
       </div>
     </div>
   </section>
 
+  <!-- 视频3（路径已改为 videos/contact.mp4） -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+      <div class="hero-body has-text-centered">
+        <video poster="" autoplay controls muted loop preload="metadata">
           <source src="videos/contact.mp4" type="video/mp4">
         </video>
-        <h2 class="subtitle has-text-centered">
-          UAV Surface Contact Detection (地面接触检测演示)
-        </h2>
+        <h2 class="video-desc">wall contact</h2>
       </div>
     </div>
   </section>
 
+  <!-- 视频4（路径已改为 videos/takeoff.mp4） -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+      <div class="hero-body has-text-centered">
+        <video poster="" autoplay controls muted loop preload="metadata">
           <source src="videos/takeoff.mp4" type="video/mp4">
         </video>
-        <h2 class="subtitle has-text-centered">
-          UAV Takeoff Process (无人机起飞过程演示)
-        </h2>
+        <h2 class="video-desc">ground take-off</h2>
       </div>
     </div>
   </section>
 
-  <!-- 可选：保留简洁页脚（如需删除可直接删掉这段） -->
+  <!-- 简洁页脚 -->
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-8 content has-text-centered">
-          <p>© 2024 Leg-Assisted Multirotor UAV Research Team</p>
+          <p style="font-family: 'Open Sans', sans-serif;">© 2024 Leg-Assisted Multirotor UAV Research Team</p>
         </div>
       </div>
     </div>

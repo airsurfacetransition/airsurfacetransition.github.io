@@ -3,7 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+   <!-- 关键：引入 MathJax 库（用于渲染公式） -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- 配置 MathJax：识别 $...$ 为行内公式（如 $m/s^2$） -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']] // 启用 $ 作为行内公式的分隔符
+      }
+    };
+  </script>
   <!-- 元数据 -->
   <meta name="title" content="Air-Surface Transition of a Novel Leg-Assisted Multirotor UAV: Design and Control">
   <meta name="description" content="experiment videos for paper">
@@ -73,6 +82,19 @@
       </div>
     </div>
   </section>
+
+
+    <!-- 视频4：完全居中 -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" autoplay controls muted loop preload="metadata">
+          <source src="videos/takeoff.mp4" type="video/mp4">
+        </video>
+        <h2 class="video-desc">Takeoff: SLQ is set to hover at initial altitude waiting for the take-off order. Once the order is received, rotors generate lift force to reach desired velocity(1$m/s$) while transiting to the air.</h2>
+      </div>
+    </div>
+  </section>
   
   <!-- 视频1：完全居中 -->
   <section class="hero teaser">
@@ -81,7 +103,7 @@
         <video poster="" autoplay controls muted loop preload="metadata">
           <source src="videos/land.mp4" type="video/mp4">
         </video>
-        <h2 class="video-desc">Landing</h2>
+        <h2 class="video-desc">Landing: Our SLQ can land at -1.8$m/s$ under 1$s$ and reach the max acceleration 20$m/s^2$.</h2>
       </div>
     </div>
   </section>
@@ -93,22 +115,12 @@
         <video poster="" autoplay controls muted loop preload="metadata">
           <source src="videos/hop.mp4" type="video/mp4">
         </video>
-        <h2 class="video-desc">Hopping</h2>
+        <h2 class="video-desc">Hopping: In fixed point hopping experiment, we showcase the position keeping capability during continuous hopping.</h2>
       </div>
     </div>
   </section>
   
-  <!-- 视频4：完全居中 -->
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video poster="" autoplay controls muted loop preload="metadata">
-          <source src="videos/takeoff.mp4" type="video/mp4">
-        </video>
-        <h2 class="video-desc">Takeoff</h2>
-      </div>
-    </div>
-  </section>
+
   <!-- 视频3：完全居中 -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
@@ -116,7 +128,7 @@
         <video poster="" autoplay controls muted loop preload="metadata">
           <source src="videos/contact.mp4" type="video/mp4">
         </video>
-        <h2 class="video-desc">Surface Contact</h2>
+        <h2 class="video-desc">Wall Contact: In order to exhibit the contact tolerance performance of our proposed approach, SLQ was set to fly towards a vertical wall at desired velocity(1.8$m/s$).</h2>
       </div>
     </div>
   </section>
